@@ -12,7 +12,7 @@ Zeonix is a **modern, high-tech landing page** designed with **a neon, futuristi
 
 ## 📸 Screenshots
 
-![Zeonix Screenshot](img/screenshot.png) _(Add a screenshot of the landing page here)_
+![Zeonix Screenshot](img/screenshot.png)
 
 ## 🛠️ Technologies Used
 
