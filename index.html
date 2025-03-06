@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Landing Page</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+		/>
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<header>
+			<label for="logo">Zeonix</label>
+			<div class="hamburger" onclick="toggleMenu()">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<nav>
+				<ul id="nav-menu">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Features</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- HERO SECTION -->
+		<section class="hero scroll-reveal">
+			<div class="text scroll-left">
+				<h2>Welcome to the future of tech</h2>
+				<p>Discover cutting-edge solutions with our platform</p>
+				<a href="#" class="btn">Get started</a>
+			</div>
+
+			<div class="illustration scroll-right">
+				<img src="img/hero-tree.png" alt="" />
+			</div>
+		</section>
+
+		<!-- FEATURES SECTION -->
+		<section class="features scroll-reveal">
+			<div class="feature scroll-left">
+				<i class="icon"
+					><span class="material-symbols-outlined"> rocket_launch </span></i
+				>
+				<h3>Blazing Fast</h3>
+				<p>
+					Our platform is optimized for speed, ensuring lightning-fast load
+					times and seamless interactions. No lag, no delays—just pure
+					efficiency.
+				</p>
+			</div>
+			<div class="feature scroll-right">
+				<i class="icon"
+					><span class="material-symbols-outlined"> encrypted </span></i
+				>
+				<h3>Secure & Reliable</h3>
+				<p>
+					We use cutting-edge encryption and security protocols to protect your
+					data. Your privacy and security are our top priorities.
+				</p>
+			</div>
+			<div class="feature scroll-left">
+				<i class="icon"
+					><span class="material-symbols-outlined"> emoji_objects </span></i
+				>
+				<h3>AI-Powered</h3>
+				<p>
+					Leverage artificial intelligence to automate tasks, gain insights, and
+					enhance productivity like never before.
+				</p>
+			</div>
+		</section>
+
+		<!-- CALL TO ACTION -->
+		<section class="how-it-works scroll-reveal">
+			<h2>How It Works</h2>
+			<div class="steps scroll-reveal">
+				<a href="#" class="step scroll-left">
+					<span>1</span>
+					<h3>Sign Up</h3>
+					<p>Create an account in seconds and unlock powerful features.</p>
+				</a>
+				<a href="#" class="step scroll-right">
+					<span>2</span>
+					<h3>Explore Features</h3>
+					<p>
+						Discover AI-driven tools, advanced analytics, and seamless
+						integrations.
+					</p>
+				</a>
+				<a href="#" class="step scroll-left">
+					<span>3</span>
+					<h3>Start Building</h3>
+					<p>Customize, optimize, and deploy your projects with ease.</p>
+				</a>
+			</div>
+		</section>
+
+		<!-- TECHNOLOGIES -->
+		<section class="technologies scroll-reveal">
+			<h2>Technologies We Use</h2>
+			<div class="tech-grid scroll-reveal">
+				<div class="tech-item scroll-right">
+					<i class="bx bxl-html5"></i>
+					<p>HTML5</p>
+				</div>
+				<div class="tech-item scroll-left">
+					<i class="bx bxl-css3"></i>
+					<p>CSS3</p>
+				</div>
+				<div class="tech-item scroll-right">
+					<i class="bx bxl-javascript"></i>
+					<p>JavaScript</p>
+				</div>
+				<div class="tech-item scroll-left">
+					<i class="bx bxl-react"></i>
+					<p>React</p>
+				</div>
+				<div class="tech-item scroll-right">
+					<i class="bx bxl-nodejs"></i>
+					<p>Node.js</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- FOOTER -->
+		<footer class="footer">
+			<div class="footer-container">
+				<!-- About Section -->
+				<div class="footer-about">
+					<h3>About Us</h3>
+					<p>
+						We are dedicated to building high-quality, tech-driven solutions
+						that enhance user experiences and streamline workflows.
+					</p>
+				</div>
+
+				<!-- Quick Links -->
+				<div class="footer-links">
+					<h3>Quick Links</h3>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Features</a></li>
+						<li><a href="#">Technologies</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+
+				<!-- Newsletter Signup -->
+				<div class="footer-newsletter">
+					<h3>Subscribe</h3>
+					<p>Join our newsletter for the latest updates and insights.</p>
+					<form>
+						<input type="email" placeholder="Enter your email" required />
+						<button type="submit">Subscribe</button>
+					</form>
+				</div>
+
+				<!-- Contact Info -->
+				<div class="footer-contact">
+					<h3>Contact Us</h3>
+					<p>Email: support@yourwebsite.com</p>
+					<p>Location: Remote, Worldwide</p>
+				</div>
+
+				<!-- Social Media -->
+				<div class="footer-social">
+					<h3>Follow Us</h3>
+					<div class="social-icons">
+						<a href="#"><i class="bx bxl-github"></i></a>
+						<a href="#"><i class="bx bxl-twitter"></i></a>
+						<a href="#"><i class="bx bxl-linkedin"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<p class="footer-text">&copy; 2025 Your Website. All rights reserved.</p>
+		</footer>
+	</body>
+</html>

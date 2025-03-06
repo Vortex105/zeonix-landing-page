@@ -1,0 +1,699 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+:root {
+	/* Colors */
+	--text-color: #d1d1d1;
+	--bg-color: #0a0f1e;
+	--primary: #00eaff;
+	--hover: #00ff88;
+
+	/* padding */
+	--p-main: 2rem 4.5rem;
+	--p-side: 4.5rem;
+	/* transition */
+	--transition: 0.5s ease-in-out;
+}
+
+body {
+	position: relative;
+	min-height: 100vh;
+	color: var(--text-color);
+	background-color: var(--bg-color);
+}
+
+/* button */
+.btn {
+	display: inline-block;
+	background-color: var(--primary);
+	color: var(--bg-color);
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-weight: bold;
+	transition: var(--transition);
+}
+.btn:hover {
+	background-color: var(--hover);
+	box-shadow: 0 0 10px var(--hover), 0 0 25px var(--hover);
+}
+
+/* Header styling */
+header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	padding: var(--p-main);
+	display: flex;
+	align-items: center;
+	background-color: transparent;
+	backdrop-filter: blur(20px);
+	justify-content: space-between;
+	z-index: 999;
+}
+
+/* Logo */
+/* Logo Styling */
+header label {
+	font-size: 2rem;
+	font-weight: bold;
+	color: var(--primary);
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	cursor: pointer;
+	transition: color var(--transition);
+}
+
+header label:hover {
+	color: var(--hover);
+}
+
+/* Nav Menu */
+header nav ul li {
+	display: inline-block;
+}
+
+header nav ul li a {
+	position: relative;
+	color: var(--text-color);
+	font-weight: 500;
+	margin-right: 0.5rem;
+	font-size: 1.2rem;
+	padding: 4px 8px;
+	background-color: transparent;
+	border-radius: 4px;
+}
+/* Neon Glow Effect */
+header nav ul li a::before {
+	content: '';
+	position: absolute;
+	bottom: -4px;
+	left: 50%;
+	width: 0;
+	height: 3px;
+	background: var(--primary);
+	box-shadow: 0 0 10px var(--primary);
+	transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+}
+
+header nav ul li a:hover,
+header nav ul li a:focus {
+	color: var(--hover);
+}
+
+header nav ul li a:hover::before,
+header nav ul li a:focus::before {
+	width: 100%;
+	left: 0;
+}
+
+/* Hero section */
+.hero {
+	position: relative;
+	padding: 10rem var(--p-side);
+	background-image: url('img/hero-bg.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* To blur hero background */
+.hero::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+	backdrop-filter: blur(6px); /* Blur effect */
+	z-index: 1;
+}
+
+.hero .text,
+.hero .illustration {
+	flex: 1;
+	position: relative;
+	z-index: 2; /* Keeps text above the blur */
+}
+
+.hero .text {
+	max-width: 50%;
+}
+
+.hero h2 {
+	font-size: 4.5rem;
+	text-transform: capitalize;
+	color: var(--primary);
+	text-shadow: 0 0 10px var(--primary);
+}
+.hero p {
+	margin: 2rem auto;
+	font-size: 1.5rem;
+}
+
+.hero .illustration {
+	display: flex;
+	justify-content: center;
+}
+
+.hero .illustration img {
+	width: 100%;
+	max-width: 450px;
+}
+
+.features {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 30px;
+	text-align: center;
+	padding: var(--p-side);
+	background: rgba(0, 234, 255, 0.05); /* Slight neon glow */
+	box-shadow: inset 4px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+.feature {
+	background: rgba(10, 15, 30, 0.8);
+	padding: 20px;
+	line-height: 2.5rem;
+	border-radius: 10px;
+	border: 1px solid transparent;
+	box-shadow: 0 0 10px rgba(0, 234, 255, 0.2);
+	transition: all var(--transition);
+	position: relative;
+	overflow: hidden;
+}
+
+.feature:hover {
+	background: rgba(10, 15, 30, 0.5); /* Slight transparency effect */
+	border: 1px solid var(--primary);
+	box-shadow: 0 0 20px rgba(0, 234, 255, 0.5),
+		inset 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Add a subtle glowing effect */
+.feature::before {
+	content: '';
+	position: absolute;
+	top: -100%;
+	left: -100%;
+	width: 300%;
+	height: 300%;
+	background: radial-gradient(circle, rgba(0, 234, 255, 0.2), transparent);
+	transition: transform var(--transition);
+	transform: translate(-50%, -50%);
+	z-index: 0;
+}
+
+.feature:hover::before {
+	transform: translate(0, 0);
+}
+
+/* Ensure text remains on top */
+.feature h3,
+.feature p {
+	position: relative;
+	z-index: 1;
+}
+
+.icon {
+	padding: var(--p-main);
+}
+.icon span {
+	font-size: 2.5rem;
+	color: var(--primary);
+}
+
+/* CALL TO ACTION */
+.how-it-works {
+	padding: var(--p-main);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.steps {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+}
+
+.how-it-works h2 {
+	text-align: center;
+	font-size: 2rem;
+	color: var(--primary); /* Neon main color */
+	text-align: center;
+	margin-bottom: 2.5rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	position: relative;
+	display: inline-block;
+}
+
+/* Neon glow effect */
+.how-it-works h2::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: -5px;
+	width: 60%;
+	height: 2px;
+	background: var(--primary);
+	transform: translateX(-50%);
+	box-shadow: 0 0 10px var(--primary);
+}
+
+.step {
+	display: block; /* Makes the entire card clickable */
+	background: rgba(10, 15, 30, 0.9);
+	padding: 20px;
+	line-height: 2rem;
+	border-radius: 10px;
+	text-align: center;
+	max-width: 300px;
+	box-shadow: 0 0 15px rgba(0, 234, 255, 0.2);
+	transition: all var(--transition);
+	text-decoration: none;
+	color: inherit; /* Ensures text color is consistent */
+	position: relative;
+	overflow: hidden;
+}
+
+.step:hover {
+	box-shadow: 0 0 25px rgba(0, 234, 255, 0.5);
+	transform: translateY(-5px);
+	background: rgba(10, 15, 30, 0.8);
+}
+
+/* Prevents text color from changing unexpectedly */
+.step h3,
+.step p {
+	transition: color var(--transition);
+}
+
+.step:hover h3 {
+	color: var(--primary);
+}
+
+.step:hover p {
+	color: #ddd;
+}
+
+/* Ensures numbers stand out */
+.step span {
+	display: block;
+	font-size: 2rem;
+	font-weight: bold;
+	color: var(--primary);
+	margin-bottom: 10px;
+}
+
+/* TECHNOLOGIES */
+.technologies {
+	margin-top: 1.5rem;
+	text-align: center;
+	padding: 80px 20px;
+	box-shadow: inset 0 2px 2px 1px rgba(0, 0, 0, 0.6);
+	background-image: linear-gradient(#0a0f1ebe, #0b0e18bb), url(img/tech-img.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.technologies h2 {
+	font-size: 2rem;
+	color: var(--primary);
+	text-transform: uppercase;
+	margin-bottom: 40px;
+	letter-spacing: 2px;
+	position: relative;
+	display: inline-block;
+}
+
+.tech-grid {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+.tech-item {
+	background: rgba(10, 15, 30, 0.9);
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	width: 120px;
+	box-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
+	transition: var(--transition);
+}
+
+.tech-item:hover {
+	box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);
+	transform: scale(1.1);
+}
+
+.tech-item i {
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+	color: var(--primary);
+}
+
+.tech-item p {
+	font-size: 1rem;
+	color: var(--primary);
+	font-weight: bold;
+}
+
+/* FOOTER */
+.footer {
+	background: var(--bg-color);
+	padding: var(--p-main);
+	text-align: center;
+	box-shadow: 0 -5px 20px rgba(0, 234, 255, 0.3);
+}
+
+.footer-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 40px;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.footer h3 {
+	color: var(--primary);
+	margin-bottom: 15px;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+}
+
+.footer p,
+.footer a {
+	color: #bbb;
+	font-size: 0.9rem;
+	text-decoration: none;
+	transition: color var(--transition);
+}
+
+.footer a:hover {
+	color: var(--primary);
+}
+
+.footer-links ul {
+	list-style: none;
+	padding: 0;
+}
+
+.footer-links li {
+	margin-bottom: 8px;
+}
+
+/* Newsletter */
+.footer-newsletter input {
+	width: 80%;
+	padding: 8px;
+	border: none;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+
+.footer-newsletter form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.footer-newsletter input {
+	width: 100%;
+	padding: 12px;
+	border-radius: 8px;
+	border: 1px solid var(--primary);
+}
+
+.footer-newsletter button {
+	background: var(--primary);
+	color: black;
+	border: none;
+	margin-top: 0.5rem;
+	padding: 8px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.footer-newsletter button:hover {
+	background: white;
+	color: var(--primary);
+}
+
+/* Social Media */
+.social-icons a {
+	display: inline-block;
+	margin: 0 10px;
+	transition: transform var(--transition);
+}
+
+.social-icons i {
+	font-size: 2rem;
+	filter: drop-shadow(0 0 3px var(--primary));
+}
+
+.social-icons a:hover {
+	transform: scale(1.2);
+}
+
+/* Footer Text */
+.footer-text {
+	margin-top: 30px;
+	font-size: 1.2rem;
+	color: #888;
+}
+
+.hamburger {
+	display: none;
+	flex-direction: column;
+	gap: 5px;
+	cursor: pointer;
+}
+
+.hamburger span {
+	width: 30px;
+	height: 3px;
+	background: var(--primary);
+	border-radius: 5px;
+	transition: var(--transition);
+}
+
+/* Scroll animation classes */
+
+/* Initial State (Hidden) */
+.scroll-reveal {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When Element is in View */
+.scroll-reveal.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Left Slide-In Effect */
+.scroll-left {
+	opacity: 0;
+	transform: translateX(-100px);
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-left.visible {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* Right Slide-In Effect */
+.scroll-right {
+	opacity: 0;
+	transform: translateX(100px);
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-right.visible {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px) {
+	/* General Adjustments */
+	:root {
+		--p-main: 1.5rem 2.5rem; /* Reduce padding */
+		--p-side: 2.5rem;
+	}
+
+	/* Header */
+	header {
+		justify-content: space-between;
+		padding: 1rem;
+	}
+
+	.hamburger {
+		display: flex;
+		z-index: 1001;
+	}
+
+	/* Slide-in Nav Menu */
+	nav {
+		position: fixed;
+		top: 0;
+		right: -100%; /* Hide off-screen initially */
+		width: 75%;
+		height: 100vh;
+		background: rgba(10, 15, 30, 0.95);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		transition: right 0.4s ease-in-out;
+		z-index: 1000;
+	}
+
+	nav ul {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		width: 100%;
+		text-align: center;
+	}
+
+	/* Show menu when active */
+	nav.show {
+		right: 0;
+	}
+
+	nav ul li {
+		width: 100%;
+		text-align: center;
+	}
+
+	nav ul li a {
+		display: block;
+		padding: 12px 20px;
+		font-size: 1.3rem;
+		color: var(--primary);
+		background: transparent;
+		border-radius: 5px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: bold;
+		position: relative;
+		overflow: hidden;
+		transition: color var(--transition);
+	}
+
+	/* Neon Hover Effect */
+	nav ul li a::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		width: 0;
+		height: 2px;
+		background: var(--primary);
+		transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+	}
+
+	nav ul li a:hover::before,
+	nav ul li a:active::before {
+		width: 100%;
+		left: 0;
+	}
+
+	nav ul li a:hover,
+	nav ul li a:active {
+		color: var(--hover);
+	}
+
+	/* Hero Section */
+	.hero {
+		flex-direction: column;
+		text-align: center;
+		padding: 5rem 1rem;
+	}
+
+	.hero h2 {
+		font-size: 2.5rem;
+		width: 100%;
+	}
+
+	.hero p {
+		font-size: 1.2rem;
+		margin: 1.5rem auto;
+	}
+
+	.hero .illustration {
+		display: none;
+	}
+
+	/* Features Section */
+	.features {
+		grid-template-columns: 1fr;
+		padding: 2rem 1rem;
+	}
+
+	/* How It Works */
+	.steps {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.step {
+		width: 90%;
+		max-width: 300px;
+	}
+
+	/* Technologies */
+	.tech-grid {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 20px;
+	}
+
+	.tech-item {
+		width: 80px;
+		padding: 15px;
+	}
+
+	.tech-item i {
+		font-size: 2rem;
+	}
+
+	.tech-item p {
+		font-size: 0.8rem;
+	}
+
+	/* Footer */
+	.footer-container {
+		grid-template-columns: 1fr;
+		text-align: center;
+		gap: 30px;
+	}
+
+	.footer-newsletter input {
+		width: 100%;
+	}
+
+	.footer-newsletter button {
+		width: 100%;
+	}
+}
